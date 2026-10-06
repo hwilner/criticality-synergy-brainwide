@@ -1,0 +1,10 @@
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.3
+matplotlib>=3.7
+pandas>=2.0
+
+# Optional empirical pipeline (IBL Brain-Wide Map / Allen Visual Coding):
+# ONE-api>=2.5        # IBL data access (Open Neurophysiology Environment)
+# allensdk>=2.16      # Allen Brain Observatory replication dataset
+# pyinform>=0.2       # alternative transfer-entropy cross-check
