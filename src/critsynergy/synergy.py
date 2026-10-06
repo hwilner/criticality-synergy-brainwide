@@ -164,9 +164,9 @@ def transfer_entropy_discrete(source: np.ndarray, target: np.ndarray,
     y_future = t[lag:]
     y_past = t[:-lag]
     x_past = s[:-lag]
-    h_yy = joint_entropy_discrete(np.stack([y_future, y_past], axis=1)) \
-        - entropy_discrete(y_past)
+    h_yy = (joint_entropy_discrete(np.stack([y_future, y_past], axis=1))
+            - entropy_discrete(y_past))
     joint = np.stack([y_future, y_past, x_past], axis=1)
-    h_yyx = joint_entropy_discrete(joint) \
-        - joint_entropy_discrete(np.stack([y_past, x_past], axis=1))
+    h_yyx = (joint_entropy_discrete(joint)
+             - joint_entropy_discrete(np.stack([y_past, x_past], axis=1)))
     return float(h_yy - h_yyx)
